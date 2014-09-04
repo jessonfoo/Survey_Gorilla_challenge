@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~>1.9.3'
+ruby '2.1.2'
 
 gem 'pg'
 
@@ -12,7 +12,7 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 
 gem 'shotgun'
-
+gem 'thin'
 gem 'shoulda-matchers'
 gem 'rack-test'
 gem 'rspec'
