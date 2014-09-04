@@ -40,18 +40,29 @@ get '/users/:id' do
   p signed_in?
   if signed_in?
     @my_surveys = Survey.where(created_by: current_user.username)
-    erb :temp_homepage
   end
-
+  @other_surveys = Survey.all.select { |survey| survey.created_by != current_user.username }
+  p @other_surveys
+  erb :temp_homepage
 end
-
 
 get '/users/:id/surveys/create' do
 
 end
 
-# fill survey
 get '/surveys/:survey_id' do
+  redirect "/surveys/#{params[:survey_id]}/result"
+end
+
+# fill survey
+get '/surveys/:survey_id/take' do
+  @survey_being_taken = Survey.find(params[:survey_id])
+  @questions = @survey_being_taken.questions
+  @question_number = 1
+  erb :survey_take
+end
+
+post '/surveys/:survey_id/take' do
 
 end
 
