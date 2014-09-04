@@ -1,1 +1,6 @@
 <a href="/logout">Logout</a>
+<div class="container">
+  <% @my_surveys.each do |survey| %>
+    <a class="my-survey" href="/surveys/<%= survey.id %>/result"><%= survey.name %></a>
+  <% end %>
+</div>

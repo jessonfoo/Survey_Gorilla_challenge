@@ -1,6 +1,4 @@
 get '/' do
-  p current_user
-  p signed_in?
   if signed_in?
     redirect "/users/#{current_user.id}"
   end
@@ -14,7 +12,6 @@ end
 
 post '/signin' do
   @user = User.find_by(username: params[:username])
-  p @user
   if @user
     session[:user_id] = @user.id
     redirect "/users/#{current_user.id}"
@@ -30,7 +27,6 @@ end
 post '/signup' do
   @user = User.create(params)
   session[:user_id] = @user.id
-  p current_user
   redirect '/'
 end
 
@@ -43,8 +39,10 @@ get '/users/:id' do
   p current_user
   p signed_in?
   if signed_in?
+    @my_surveys = Survey.where(created_by: current_user.username)
     erb :temp_homepage
   end
+
 end
 
 
@@ -59,6 +57,8 @@ end
 
 # see survey result
 get '/surveys/:survey_id/result' do
-  survey = Survey.find(params[:survey_id])
+  @survey = Survey.find(params[:survey_id])
 
+  erb :survey_result, layout: false
 end
+
