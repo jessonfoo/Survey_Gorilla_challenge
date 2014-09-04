@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '1.9.3'
 
 gem 'pg'
 
@@ -16,7 +16,6 @@ gem 'shotgun'
 gem 'shoulda-matchers'
 gem 'rack-test'
 gem 'rspec'
-gem 'capybara'
 
 gem 'factory_girl'
 gem 'faker'
