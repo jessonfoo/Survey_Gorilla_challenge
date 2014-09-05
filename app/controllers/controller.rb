@@ -3,6 +3,7 @@ get '/' do
   if signed_in?
     redirect "/users/#{current_user.id}"
   end
+  @surveys = Survey.all
   erb :index
 end
 
@@ -22,7 +23,7 @@ post '/signin' do
 end
 
 get '/signup' do
-  erb :signup
+  erb :signup, layout: false
 end
 
 post '/signup' do

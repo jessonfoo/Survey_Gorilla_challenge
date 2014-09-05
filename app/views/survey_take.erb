@@ -6,14 +6,16 @@
     <p><%= "#{@question_number}. #{question.question}" %></p>
     <form class="poll-form">
       <% choices.each do |choice| %>
-        <input type="radio" name="question<%=question.id%>" value="<%= choice.choice %>"><%= choice.choice %></br>
+        <input type="radio" name="question<%=question.id%>" value="<%= choice.choice %>"> <%= choice.choice %></br>
       <% end %>
     </form>
     <% @question_number += 1 %>
   <% end %>
   </br>
   <!-- <input class="submit" type="submit"> -->
-  <a class="submit" href="/surveys/<%= @survey_being_taken.id %>/submit">SUBMIT</a>
+  <div class="submit_div">
+    <a class="submit" href="/surveys/<%= @survey_being_taken.id %>/submit">SUBMIT</a>
+  </div>
 </div>
 
 

@@ -1,15 +1,13 @@
 $(document).ready(function(){
-  $(".container").on("click", ".other-survey", function(event) {
+  $(".left-nav").on("click", ".other-survey", function(event) {
     event.preventDefault();
-    // formData = $(this).serialize();
-    // console.log(formData);
-    // debugger
-    var request = $.ajax({url: $(this).attr("href"), type: "GET", context: this})
+    var request = $.ajax({
+      url: $(this).attr("href"),
+      type: "GET", context: this
+    })
     request.done(function(serverData) {
-      console.log("success");
-      console.log(serverData);
-      cleanup();
-      $(".container").append(serverData)
+      cleanup()
+      $(".render_survey").append(serverData)
     })
     request.fail(function() {
       console.log("fail");
@@ -33,7 +31,8 @@ $(document).ready(function(){
 })
 
 function cleanup() {
-  $(".survey-container").remove();
+  $(".survey-container").remove()
+  $(".inputfields").remove()
   $(".survey-result").remove();
   $(".message").remove();
 }

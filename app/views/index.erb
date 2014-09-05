@@ -1,26 +1,37 @@
 <div class='nav-bar'>
-  <p><b> 
+  <p><b>
    <span class='left-align'>&nbsp;| status :</span>
    <a href='/' class='left-align'> &nbsp; | username |</a>
-   <a href='/' class='right-align'> &nbsp; Link 2 | </a>
-   <a href='/' class='right-align'> | Link 1 | </a>
+   <a id="sign_up" href='/signup' class='right-align'> &nbsp; Sign Up | </a>
+   <a id="sign_in" class='right-align' href="/signin"> | Sign In | </a>
 
  </b></p>
 </div>
 
 <div class='broccoli'>
   <h1>broccoli.</h1>
+
+  <div class='left-nav'>
+  <% if signed_in? %>
+    <h4  id='avail-surveys'>Take A Survey</h4>
+
+    <h4  id='your-surveys'>Results</h4>
+
+  <% else %>
+    <h4  id='avail-surveys'>Take A Survey</h4>
+    <% @surveys.each do |survey| %>
+    <a class="other-survey" href="/surveys/<%= survey.id %>/take"><%= survey.name %></a><br>
+    <% end %>
+  <% end %>
+</div>
 </div>
 
 
-<div class='left-nav'>
-  <h4  id='avail-surveys'>Take A Survey</h4>
-  <div class='survey-content1'>Survey 1 </div>
-  <div class='survey-content1'>Survey 2</div>
-  <h4  id='your-surveys'>Results</h4>
-  <div class='survey-content2'>Survey 1</div>
-  <div class='survey-content2'>Survey 2</div>
+
+<div class="render_survey">
+
 </div>
-<div id='broc-div'>
+
+<!-- <div id='broc-div'>
   <img src="/images/broc-bg.png" class='broc-img'>
-</div>
+</div> -->
