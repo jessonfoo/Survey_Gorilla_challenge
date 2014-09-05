@@ -1,0 +1,19 @@
+<div class="survey-container">
+  <h2><%= @survey_being_taken.name %></h2>
+  <% @questions.each do |question| %>
+    <% choices = question.choices %>
+
+    <p><%= "#{@question_number}. #{question.question}" %></p>
+    <form class="poll-form">
+      <% choices.each do |choice| %>
+        <input type="radio" name="question<%=question.id%>" value="<%= choice.choice %>"><%= choice.choice %></br>
+      <% end %>
+    </form>
+    <% @question_number += 1 %>
+  <% end %>
+  </br>
+  <!-- <input class="submit" type="submit"> -->
+  <a class="submit" href="/surveys/<%= @survey_being_taken.id %>/submit">SUBMIT</a>
+</div>
+
+

@@ -1,0 +1,65 @@
+body {
+  background-color: #659525;
+}
+
+div.nav-bar {
+  position: relative;
+  background-color: #ffffff;
+  margin-top: -2.53em;
+  width: 100%;
+}
+
+body {
+  background-color: #659525;
+}
+div.nav-bar {
+  position: relative;
+  background-color: #ffffff;
+  margin-top: -3.5vw;
+}
+
+body {
+  background-color: #659525;
+}
+div.right-align {
+  text-align: right;
+  margin-top: -8vw;
+  width: 100%;
+}
+
+p.nav-text {
+  color: #659525;
+  font-size: 2.55em;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: #659525;
+}
+
+a:link.nav-link {
+}
+
+a:visited.nav-link {
+}
+
+a:hover.nav-link {
+}
+
+a:active.nav-link {
+}
+
+/* EDITS MADE BY GARY FOR THE CREATE SURVEY SHEET */
+
+.delete {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.delete:hover {
+  color: red;
+}
+
+/* ----------------------------------------------*/

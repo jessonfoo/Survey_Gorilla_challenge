@@ -1,0 +1,15 @@
+<header>
+  <h1>Create Survey</h1>
+</header>
+
+<form class='question_container' action="/users/<%="#{current_user.id}"%>/create" method="POST">
+  <h2 style="display:inline">Survey Name:</h2>
+  <input id="survey_name" type="text" name="survey_name" placeholder="survey name"><br>
+
+  <input id="add_question" type="submit" value="add question">
+  <br><br>
+
+  <input id="create_button" type="submit" value="create">
+  <input id="cancel_button" type="submit" value="cancel">
+</form>
+
