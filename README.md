@@ -2,11 +2,11 @@ Survey_Gorilla_challenge
 ========================
 
 ##TEAM:  FINGERS
-  Michael
-  Michelle
-  Gary
-  Jesson
-  Andrew
+  Michael  
+  Michelle  
+  Gary  
+  Jesson  
+  Andrew  
 
 ##PROJECT:  SURVEY BROCCOLI
 
@@ -36,16 +36,15 @@ CREATED_BY
 TIMESTAMPS  
 
 ####USER_SURVEYS (Join Table)
+ID  
 USER_ID (Creator)  
 SURVEY_ID  
-QUESTIONS  
-ID  
-QUESTION  
+QUESTION    
 TIMESTAMPS  
 
 ####CHOICES
 ID  
-CHOICE  
+CHOICE   
 TIMESTAMPS  
 
 ####TAKENS
