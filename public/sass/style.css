@@ -75,4 +75,13 @@ img.broc-img {
   width: 40vw;
   border-radius: 40vw; }
 
+.delete {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  transition: all 0.2s; }
+
+.delete:hover {
+  color: red; }
+
 /*# sourceMappingURL=style.css.map */
