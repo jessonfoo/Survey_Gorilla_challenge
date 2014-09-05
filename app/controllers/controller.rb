@@ -40,13 +40,10 @@ get '/logout' do
 end
 
 get '/users/:id' do
-  p current_user
-  p signed_in?
   if signed_in?
     @my_surveys = Survey.where(created_by: current_user.username)
   end
   @other_surveys = Survey.all.select { |survey| survey.created_by != current_user.username }
-  p @other_surveys
   erb :temp_homepage
 end
 
@@ -76,7 +73,6 @@ end
 # see survey result
 get '/surveys/:survey_id/result' do
   @survey = Survey.find(params[:survey_id])
-
   erb :survey_result, layout: false
 end
 
