@@ -1,25 +1,32 @@
 body {
   background-color: #659525;
 }
+
 div.nav-bar {
   position: relative;
   background-color: #ffffff;
-  margin-top: -3em;
+  margin-top: -2.53em;
+  width: 100%;
 }
-  body {
+
+body {
   background-color: #659525;
 }
 div.nav-bar {
   position: relative;
   background-color: #ffffff;
-  margin-top: -3em;
-  height: 6em;
+  margin-top: -3.5vw;
+}
+
+body {
+  background-color: #659525;
+}
+div.right-align {
+  text-align: right;
+  margin-top: -8vw;
   width: 100%;
 }
-span.nav-links {
-}
-span.nav-divider {
-}
+
 p.nav-text {
   color: #659525;
   font-size: 2.55em;
@@ -43,71 +50,4 @@ a:active.nav-link {
 }
 
 
-div.background {
-
-}
-  height: 6em;
-  width: 100%;
-}
-span.nav-links {
-}
-span.nav-divider {
-}
-p.nav-text {
-  color: #659525;
-  font-size: 2.55em;
-}
-
-a.nav-link {
-  text-decoration: none;
-  color: #659525;
-}
-
-a:link.nav-link {
-}
-
-a:visited.nav-link {
-}
-
-a:hover.nav-link {
-}
-
-a:active.nav-link {
-}
-
-
-div.background {
-
-}
-
-
-/*MICHELE'S CODE BELOW*/
-
-div.left-nav-take {
-  float: left;
-  margin-top: 10%;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 2em;
-  border-top-style: ridge;
-  border-bottom-style: ridge;
-  border-color:   #3D5916;
-  border-width: 0.5em;
-  width: 40%;
-}
-
-div.left-nav-created {
-  float: left;
-  margin-top: 10%;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 2em;
-  border-top-style: ridge;
-  border-bottom-style: ridge;
-  border-color:   #3D5916;
-  border-width: 0.5em;
-  width: 40%;
-}
-
-
-/*font-family: 'Ubuntu', sans-serif;
-font-family: 'Ubuntu Condensed', sans-serif;*/
 
