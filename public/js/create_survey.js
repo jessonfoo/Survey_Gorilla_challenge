@@ -2,8 +2,9 @@ $(document).ready(function() {
   var question_count = 0
   var choice_count = 0
 
-  $("#add_question").on("click", function(event){
+  $(".render_survey").on("click", "#add_question", function(event){
     question_count += 1
+    console.log(1)
     event.preventDefault()
     $.ajax({
       url: '/add_question',
@@ -16,7 +17,7 @@ $(document).ready(function() {
     .fail( function() {console.log("fail")} )
   });
 
-  $(".question_container").on("click", ".add_choice", function(event){
+  $(".render_survey").on("click", ".add_choice", function(event){
     choice_count += 1
     button = $(this)
     event.preventDefault()
@@ -31,7 +32,7 @@ $(document).ready(function() {
     .fail( function() {console.log("fail")} )
   });
 
-  $(".question_container").on("click", "#delete_choice", function(event){
+  $(".render_survey").on("click", "#delete_choice", function(event){
     button = $(this)
     event.preventDefault()
     $.ajax({
@@ -42,13 +43,27 @@ $(document).ready(function() {
     .fail( function() {console.log("fail")} )
   });
 
-  $(".question_container").on("click", "#delete_question", function(event){
+  $(".render_survey").on("click", "#delete_question", function(event){
     button = $(this)
     event.preventDefault()
     $.ajax({
     })
     .done(function(data) {
       button.parent().parent().remove()
+    })
+    .fail( function() {console.log("fail")} )
+  });
+
+  $("#create_survey").on("click", function(event){
+    event.preventDefault()
+    $.ajax({
+      url: $("#create_form").attr("action"),
+      type: 'GET'
+    })
+    .done(function(data) {
+      cleanup();
+      $('.render_survey').css("visibility", "visible")
+      $(".render_survey").append(data);
     })
     .fail( function() {console.log("fail")} )
   });

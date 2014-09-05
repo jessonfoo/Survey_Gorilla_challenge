@@ -1,4 +1,5 @@
 get '/add_question' do
+  p 2
   @question_id = params[:question_id]
   erb :_question, layout: false
 end
@@ -9,7 +10,7 @@ get '/add_choice' do
 end
 
 get '/users/:id/create' do
-    erb :_create_survey
+    erb :_create_survey, layout: false
 end
 
 post '/users/:id/create' do

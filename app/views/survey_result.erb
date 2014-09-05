@@ -3,6 +3,7 @@
 </div>
 
 <div class="survey-container">
+  <% p "this is #{@survey_being_viewed}" %>
   <% survey_taken_count = SurveyResult.where(survey_id: @survey_being_viewed.id).count %>
   <h3>times taken: <%= survey_taken_count %></h3>
   <% @questions.each do |question| %>
