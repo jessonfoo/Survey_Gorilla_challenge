@@ -1,3 +1,4 @@
+
 body {
   /*background-color: #659525;*/
 background: url(http://images.fineartamerica.com/images-medium-large/broccoli-on-white-background-gaspar-avila.jpg) no-repeat center center fixed;
@@ -6,6 +7,9 @@ background: url(http://images.fineartamerica.com/images-medium-large/broccoli-on
 -o-background-size: cover;
 background-size: cover;
 }
+
+body {
+  background-color: #659525; }
 
 div.nav-bar {
   background-color: #000000;
@@ -36,7 +40,7 @@ div.broccoli {
   float: left;
   margin-top: 2vw;
   margin-left: 1vw;
-  /*padding-top: 1.5vw;*/
+  padding-top: 1.5vw;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.9vw;
   width: 15vw;
@@ -49,7 +53,7 @@ div.broccoli {
     border-width: 1.5vw; }
 
 div.left-nav {
-  /*margin-top: 15vw;*/
+  margin-top: 15vw;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.25vw; }
   div.left-nav a {

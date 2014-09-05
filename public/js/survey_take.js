@@ -22,6 +22,7 @@ $(document).ready(function(){
     request.done(function(message) {
       console.log("success");
       cleanup();
+      console.log(message)
       $(".container").append(message);
     })
     request.fail(function() {
@@ -35,4 +36,5 @@ function cleanup() {
   $(".inputfields").remove()
   $(".survey-result").remove();
   $(".message").remove();
+  $('.taken-message').remove();
 }
