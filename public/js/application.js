@@ -4,4 +4,18 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('.survey-content1').hide();
+  $('.survey-content2').hide();
+
+
+  $('#avail-surveys').hover(function(){
+    $('.survey-content1').slideDown('slow');
+  });
+
+  $('#your-surveys').hover(function(){
+    $('.survey-content2').slideDown('slow');
+  });
+
+
 });
+

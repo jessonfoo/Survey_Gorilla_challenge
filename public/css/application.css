@@ -1,23 +1,35 @@
 body {
   background-color: #659525;
+  margin-bottom: 1.5em;
 }
+
+.notworkingcrap{
+  background-image: url('/../broccoli.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  opacity: 0.2;
+}
+
 div.nav-bar {
   position: relative;
-  background-color: #ffffff;
+  background-color: #000000;
   margin-top: -3em;
 }
   body {
   background-color: #659525;
 }
+
 div.nav-bar {
   position: relative;
-  background-color: #ffffff;
+  background-color: #000000;
   margin-top: -3em;
-  height: 6em;
+  height: 7em;
   width: 100%;
 }
+
 span.nav-links {
 }
+
 span.nav-divider {
 }
 p.nav-text {
@@ -83,31 +95,52 @@ div.background {
 
 /*MICHELE'S CODE BELOW*/
 
-div.left-nav-take {
-  float: left;
-  margin-top: 10%;
+.broccoli {
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 3%;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 2em;
-  border-top-style: ridge;
-  border-bottom-style: ridge;
-  border-color:   #3D5916;
+  font-size: 2.5vw;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-color:   #000000;
   border-width: 0.5em;
-  width: 40%;
+  width: 20%;
 }
 
-div.left-nav-created {
-  float: left;
-  margin-top: 10%;
+
+
+.left-nav {
+  margin-top: 6%;
+  margin-left: 3%;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 2em;
-  border-top-style: ridge;
-  border-bottom-style: ridge;
-  border-color:   #3D5916;
-  border-width: 0.5em;
-  width: 40%;
+  font-size: 1.25vw;
+  width: 20%;
+}
+
+#survey-content1. #survey-content2 {
+  display: none;
+}
+
+#footer {
+  position: fixed;
+  height: 1.5em;
+  width: 100%;
+  background-color: #000000;
+  margin-bottom: 0em;
+  bottom: 0em;
+  left: 0em;
+  right: 0em;
+  color: #659525;
+  text-align: center;
+  font-size: 1vw;
+}
+
+/*THIS NEEDS TO CHANGE TO REFLECT ACTUAL H4 ELEMENT*/
+h4 {
+  font-size: 1.75vw;
 }
 
 
 /*font-family: 'Ubuntu', sans-serif;
 font-family: 'Ubuntu Condensed', sans-serif;*/
-
