@@ -1,9 +1,17 @@
 <div class='nav-bar'>
   <p><b>
-   <span class='left-align'>&nbsp;| status :</span>
-   <a href='/' class='left-align'> &nbsp; | username |</a>
-   <a id="sign_up" href='/signup' class='right-align'> &nbsp; Sign Up | </a>
-   <a id="sign_in" class='right-align' href="/signin"> | Sign In | </a>
+
+  <% if signed_in? %>
+    <a href='/' class='left-align'> &nbsp;<%=current_user.username %></a>
+
+    <a id="logout" href='/logout' class='right-align'> &nbsp; Log Out</a>
+
+  <% else %>
+
+     <a id="sign_up" href='/signup' class='right-align'> &nbsp; Sign Up </a>
+     <a id="sign_in" class='right-align' href="/signin"> Sign In </a>
+
+  <% end %>
 
  </b></p>
 </div>
@@ -13,16 +21,22 @@
 
   <div class='left-nav'>
   <% if signed_in? %>
-    <h4  id='avail-surveys'>Take A Survey</h4>
+    <form id="create_form" action="/users/<%="#{current_user.id}"%>/create"  method="GET">
+    <input type="submit" id="create_survey" value="create survey">
+    </form>
 
-    <h4  id='your-surveys'>Results</h4>
+    <h4>My surveys</h4>
 
-  <% else %>
+    <% @my_surveys.each do |survey| %>
+      <a class="my-survey" href="/surveys/<%= survey.id %>/result"><%= survey.name %></a>
+    <% end %>
+    <br><br>
+  <% end %>
+
     <h4  id='avail-surveys'>Take A Survey</h4>
-    <% @surveys.each do |survey| %>
+    <% @other_surveys.each do |survey| %>
     <a class="other-survey" href="/surveys/<%= survey.id %>/take"><%= survey.name %></a><br>
     <% end %>
-  <% end %>
 </div>
 </div>
 
@@ -31,6 +45,9 @@
 <div class="render_survey">
 
 </div>
+
+
+
 
 <!-- <div id='broc-div'>
   <img src="/images/broc-bg.png" class='broc-img'>

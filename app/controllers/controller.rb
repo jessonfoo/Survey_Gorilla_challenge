@@ -1,9 +1,12 @@
 
 get '/' do
   if signed_in?
-    redirect "/users/#{current_user.id}"
+    @my_surveys = Survey.where(created_by: current_user.username)
+    @other_surveys = Survey.all.select { |survey| survey.created_by != current_user.username }
+  else
+    @other_surveys = Survey.all
   end
-  @surveys = Survey.all
+
   erb :index
 end
 
@@ -16,10 +19,8 @@ post '/signin' do
   @user = User.find_by(username: params[:username])
   if @user
     session[:user_id] = @user.id
-    redirect "/users/#{current_user.id}"
-  else
-    redirect '/'
   end
+    redirect '/'
 end
 
 get '/signup' do
@@ -39,11 +40,7 @@ get '/logout' do
 end
 
 get '/users/:id' do
-  if signed_in?
-    @my_surveys = Survey.where(created_by: current_user.username)
-  end
-  @other_surveys = Survey.all.select { |survey| survey.created_by != current_user.username }
-  erb :temp_homepage
+
 end
 
 get '/surveys/:survey_id' do
@@ -52,7 +49,6 @@ end
 
 # fill survey
 get '/surveys/:survey_id/take' do
-  p "sup"
   if current_user
     Taken.where(user_id: current_user.id, survey_id: params[:survey_id]).length != 0
       # erb :survey_take_success_message, layout: false
@@ -66,6 +62,7 @@ end
 
 # submit survey
 get '/surveys/:survey_id/submit' do
+  p params
   params.each do |key, value|
     if key.include?("question")
       question_id = key.gsub("question", "").to_i
