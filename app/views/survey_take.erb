@@ -1,0 +1,14 @@
+<div class="container">
+  <h2><%= @survey_being_taken.name %></h2>
+  <% @questions.each do |question| %>
+    <% choices = question.choices %>
+
+    <p><%= "#{@question_number}. #{question.question}" %></p>
+    <% choices.each do |choice| %>
+      <input type="radio" name="question<%=question.id%>" value="<%= choice.choice %>"><%= choice.choice %></br>
+    <% end %>
+    <% @question_number += 1 %>
+  <% end %>
+  </br>
+  <input class="submit" type="submit">
+</div>
