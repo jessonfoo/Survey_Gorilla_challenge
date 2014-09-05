@@ -30,34 +30,34 @@ PASSWORD
 TIMESTAMPS  
 
 ####SURVEYS
-ID
-NAME
-CREATED_BY
-TIMESTAMPS
+ID  
+NAME  
+CREATED_BY  
+TIMESTAMPS  
 
 ####USER_SURVEYS (Join Table)
-USER_ID (Creator)
-SURVEY_ID
-QUESTIONS
-ID
-QUESTION
-TIMESTAMPS
+USER_ID (Creator)  
+SURVEY_ID  
+QUESTIONS  
+ID  
+QUESTION  
+TIMESTAMPS  
 
 ####CHOICES
-ID
-CHOICE
-TIMESTAMPTS
+ID  
+CHOICE  
+TIMESTAMPS  
 
 ####TAKENS
-USER_ID (Taker)
-SURVEY_ID
-TIMESTAMPS
+USER_ID (Taker)  
+SURVEY_ID  
+TIMESTAMPS  
 
 ####SURVEY_RESULTS
-CHOICE
-SURVEY_ID
-QUESTION_ID
-TIMESTAMPS
+CHOICE  
+SURVEY_ID  
+QUESTION_ID  
+TIMESTAMPS  
 
 We’re using AJAX throughout our one-page application to retrieve information and render views with limited need to refresh the page.  
 
