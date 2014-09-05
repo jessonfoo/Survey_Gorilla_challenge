@@ -52,15 +52,16 @@ end
 
 # fill survey
 get '/surveys/:survey_id/take' do
-  if Taken.where(user_id: current_user.id, survey_id: params[:survey_id]).length != 0
-    # erb :survey_take_success_message, layout: false
-    "<p class='taken-message'>Fuck off</p>"
-  else
+  p "sup"
+  if current_user
+    Taken.where(user_id: current_user.id, survey_id: params[:survey_id]).length != 0
+      # erb :survey_take_success_message, layout: false
+      "<p class='taken-message'>Fuck off</p>"
+  end
     @survey_being_taken = Survey.find(params[:survey_id])
     @questions = @survey_being_taken.questions
     @question_number = 1
     erb :survey_take, layout: false
-  end
 end
 
 # submit survey
@@ -71,7 +72,9 @@ get '/surveys/:survey_id/submit' do
       SurveyResult.create(choice: value, question_id: question_id, survey_id: params[:survey_id])
     end
   end
-  Taken.create(user_id: current_user.id, survey_id: params[:survey_id])
+  if signed_in?
+    Taken.create(user_id: current_user.id, survey_id: params[:survey_id])
+  end
   erb :survey_take_success_message, layout: false
 end
 

@@ -3,7 +3,7 @@ $(document).ready(function(){
     event.preventDefault();
     var request = $.ajax({
       url: $(this).attr("href"),
-      type: "GET", context: this
+      type: "GET"
     })
     request.done(function(serverData) {
       cleanup()
