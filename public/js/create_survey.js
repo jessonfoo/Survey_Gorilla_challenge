@@ -52,21 +52,6 @@ $(document).ready(function() {
     })
     .fail( function() {console.log("fail")} )
   });
-
-  $("#create_button").on("click", function(event) {
-    event.preventDefault()
-    var form_data = $(".question_container").serialize()
-    console.log(form_data)
-    $.ajax({
-      url: '/users/3/create',
-      type: 'POST',
-      data: form_data
-    })
-    .done(function() {
-      console.log("success")
-    })
-    .fail( function() {console.log("fail")} )
-  });
 });
 
 
