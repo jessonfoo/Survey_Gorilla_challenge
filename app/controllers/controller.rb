@@ -1,3 +1,4 @@
+
 get '/' do
   if signed_in?
     redirect "/users/#{current_user.id}"
@@ -72,4 +73,3 @@ get '/surveys/:survey_id/result' do
 
   erb :survey_result, layout: false
 end
-
