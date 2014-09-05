@@ -53,7 +53,7 @@ end
 get '/surveys/:survey_id/take' do
   if Taken.where(user_id: current_user.id, survey_id: params[:survey_id]).length != 0
     # erb :survey_take_success_message, layout: false
-    "<p>Fuck off</p>"
+    "<p class='taken-message'>Fuck off</p>"
   else
     @survey_being_taken = Survey.find(params[:survey_id])
     @questions = @survey_being_taken.questions
@@ -71,6 +71,7 @@ get '/surveys/:survey_id/submit' do
     end
   end
   Taken.create(user_id: current_user.id, survey_id: params[:survey_id])
+  erb :survey_take_success_message, layout: false
 end
 
 # see survey result
