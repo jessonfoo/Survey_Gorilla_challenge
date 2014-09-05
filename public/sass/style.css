@@ -1,0 +1,78 @@
+body {
+  background-color: #659525; }
+
+div {
+  background-color: #ffffff;
+  height: 5vw;
+  width: 100%;
+  position: relative; }
+  div p {
+    font-size: 4vw;
+    color: #659525;
+    margin-top: -6.25vw; }
+    div p span.left-align {
+      float: left;
+      color: #659525;
+      margin-top: 1.5vw; }
+    div p a.left-align {
+      float: left;
+      text-decoration: none;
+      color: #659525;
+      margin-top: 1.5vw; }
+    div p a.right-align {
+      float: right;
+      text-decoration: none;
+      color: #659525;
+      margin-top: 1.5vw; }
+
+div.broccoli {
+  float: left;
+  margin-top: 2vw;
+  margin-left: -42vw;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.9vw;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-color: #000000;
+  border-width: 1.5vw;
+  width: 15vw;
+  background-color: #659525; }
+  div.broccoli h1 {
+    margin-top: 0vw; }
+
+div.left-nav {
+  margin-top: 11vw;
+  margin-left: 1.5vw;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.25vw;
+  width: 10vw;
+  background-color: #659525; }
+  div.left-nav h4 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25vw; }
+  div.left-nav div.survey-content1 {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #659525; }
+  div.left-nav div.survey-content2 {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #659525; }
+
+div#broc-div {
+  height: 40vw;
+  width: 40vw;
+  background-color: #659525;
+  margin-left: 30vw;
+  margin-top: -15vw;
+  border-radius: 40vw; }
+
+img.broc-img {
+  opacity: 0.5;
+  border: solid black 2vw;
+  background-color: #659525;
+  height: 40vw;
+  width: 40vw;
+  border-radius: 40vw; }
+
+/*# sourceMappingURL=style.css.map */

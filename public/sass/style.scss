@@ -1,0 +1,115 @@
+$main-color: #659525;
+
+body{
+  background-color: $main-color;
+}
+
+div{
+  background-color: #ffffff;
+  height: 5vw;
+  width: 100%;
+  position: relative;
+
+  p{
+    font-size: 4vw;
+    color: $main-color;
+    margin-top: -6.25vw;
+
+    span.left-align {
+      float: left;
+      color: $main-color;
+      margin-top: 1.5vw;
+    }
+    a.left-align {
+      float: left;
+      text-decoration: none;
+      color: $main-color;
+      margin-top: 1.5vw;
+    }
+    a.right-align{
+      float: right;
+      text-decoration: none;
+      color: $main-color;
+      margin-top: 1.5vw;
+    }
+  }
+}
+
+div.broccoli {
+  float: left;
+  margin-top: 2vw;
+  margin-left: -42vw;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.9vw;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-color:   #000000;
+  border-width: 1.5vw;
+  width: 15vw;
+  background-color: $main-color;
+  h1{
+    margin-top: 0vw;
+  }
+}
+
+
+div.left-nav{
+  margin-top: 11vw;
+  margin-left: 1.5vw;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.25vw;
+  width: 10vw;
+  background-color: $main-color;
+  h4{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25vw;
+  }
+  div.survey-content1 {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: $main-color;
+  }
+
+  div.survey-content2 {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: $main-color;
+  }
+}
+div#broc-div {
+  height: 40vw;
+  width: 40vw;
+  background-color: $main-color;
+  margin-left: 30vw;
+  margin-top: -15vw;
+  border-radius: 40vw;
+}
+img.broc-img{
+  // background-image: url('../images/broc-bg.png');
+  // background-repeat: no-repeat;
+  // background-position: center;
+  opacity: 0.5;
+  border: solid black 2vw;
+  background-color: $main-color;
+  height: 40vw;
+  width: 40vw;
+  border-radius: 40vw;
+}
+
+// #footer {
+//   position: fixed;
+//   height: 1.5em;
+//   width: 100%;
+//   background-color: #000000;
+//   margin-bottom: 0em;
+//   bottom: 0em;
+//   left: 0em;
+//   right: 0em;
+//   color: #659525;
+//   text-align: center;
+//   font-size: 1vw;
+// }
+
+
+
+

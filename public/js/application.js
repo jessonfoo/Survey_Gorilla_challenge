@@ -1,7 +1,15 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+$(document).ready(function () {
+  $('.survey-content1').hide();
+  $('.survey-content2').hide();
+  $('#avail-surveys').click(function () {
+    $('.survey-content1').slideToggle('slow');
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#your-surveys').click(function () {
+    $('.survey-content2').slideToggle('slow');
+  });
+  $('broc-img').show();
+  $('#broc-div').click(function () {
+    $('.broc-img').rotate({ angle: 0, animateTo: 180, easing: $.easing.easeInOutExpo });
+  });
 });
