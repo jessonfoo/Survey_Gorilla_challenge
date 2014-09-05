@@ -72,7 +72,11 @@ end
 
 # see survey result
 get '/surveys/:survey_id/result' do
-  @survey = Survey.find(params[:survey_id])
+  p params[:survey_id]
+  @survey_being_viewed = Survey.find(params[:survey_id])
+  p @survey_being_viewed
+  @questions = @survey_being_viewed.questions
+  @question_number = 1
   erb :survey_result, layout: false
 end
 

@@ -1,5 +1,22 @@
 <div class="survey-result">
-  <h2>Survey result for <%= @survey.name %></h2>
-  <p>times taken</p>
-  <p>result</p>
+  <h2>Survey result for <%= @survey_being_viewed.name %></h2>
+</div>
+
+<div class="survey-container">
+  <% survey_taken_count = SurveyResult.where(survey_id: @survey_being_viewed.id).count %>
+  <h3>times taken: <%= survey_taken_count %></h3>
+  <% @questions.each do |question| %>
+    <% choices = question.choices %>
+    <% choice_index = 0 %>
+    <p><%= "Question #{@question_number}. #{question.question}" %></p>
+    <form class="poll-form">
+      <% choices.each do |choice| %>
+        <% choicecount = SurveyResult.where(choice: choice.choice, survey_id: @survey_being_viewed.id, question_id: question.id).count %>
+        <p><%= "Choice #{choice_index + 1}:" %> <%= choice.choice %></br><%= "count: #{choicecount}" %></p>
+        <% choice_index += 1 %>
+      <% end %>
+    </form>
+    <% @question_number += 1 %>
+  <% end %>
+  </br>
 </div>
