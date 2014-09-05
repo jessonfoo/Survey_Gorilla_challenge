@@ -23,11 +23,11 @@ These surveys can then be taken by multiple users, with the option for the creat
 On the back-end, we’ve used six different tables to store data for the application:
 
 ####USERS
-ID
-USERNAME
-EMAIL
-PASSWORD
-TIMESTAMPS
+ID  
+USERNAME  
+EMAIL  
+PASSWORD  
+TIMESTAMPS  
 
 ####SURVEYS
 ID
