@@ -22,12 +22,15 @@ post '/signin' do
 end
 
 get '/signup' do
+  p "1"
   erb :signup
 end
 
 post '/signup' do
+  p "2"
   @user = User.create(params)
   session[:user_id] = @user.id
+  p signed_in?
   redirect '/'
 end
 
