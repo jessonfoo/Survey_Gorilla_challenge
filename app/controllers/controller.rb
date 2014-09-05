@@ -47,10 +47,6 @@ get '/users/:id' do
   erb :temp_homepage
 end
 
-get '/users/:id/surveys/create' do
-
-end
-
 get '/surveys/:survey_id' do
   redirect "/surveys/#{params[:survey_id]}/result"
 end
