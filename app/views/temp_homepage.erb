@@ -1,0 +1,11 @@
+<a href="/logout">Logout</a>
+<div class="container">
+  <p>My surveys</p>
+  <% @my_surveys.each do |survey| %>
+    <a class="my-survey" href="/surveys/<%= survey.id %>/result"><%= survey.name %></a>
+  <% end %>
+  <p>Surveys created by other people</p>
+  <% @other_surveys.each do |survey| %>
+    <a class="other-survey" href="/surveys/<%= survey.id %>/take"><%= survey.name %></a>
+  <% end %>
+</div>

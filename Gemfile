@@ -12,7 +12,7 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 
 gem 'shotgun'
-
+gem 'thin'
 gem 'shoulda-matchers'
 gem 'rack-test'
 gem 'rspec'
