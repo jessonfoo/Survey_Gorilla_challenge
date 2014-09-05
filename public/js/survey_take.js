@@ -20,7 +20,6 @@ $(document).ready(function(){
     event.preventDefault();
     var answers = $(".poll-form");
     var formData = $(".poll-form").children().serialize();
-
     request = $.ajax({url: $(this).attr("href"), type: "GET", context: this, data: formData})
     request.done(function(message) {
       console.log("success");
