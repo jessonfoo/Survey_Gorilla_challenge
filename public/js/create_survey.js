@@ -31,13 +31,24 @@ $(document).ready(function() {
     .fail( function() {console.log("fail")} )
   });
 
-  $(".question_container").on("click", ".delete_choice", function(event){
+  $(".question_container").on("click", "#delete_choice", function(event){
     button = $(this)
     event.preventDefault()
     $.ajax({
     })
     .done(function(data) {
       button.parent().remove()
+    })
+    .fail( function() {console.log("fail")} )
+  });
+
+  $(".question_container").on("click", "#delete_question", function(event){
+    button = $(this)
+    event.preventDefault()
+    $.ajax({
+    })
+    .done(function(data) {
+      button.parent().parent().remove()
     })
     .fail( function() {console.log("fail")} )
   });
