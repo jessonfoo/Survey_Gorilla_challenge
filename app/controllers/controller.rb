@@ -53,16 +53,18 @@ get '/surveys/:survey_id/take' do
   @survey_being_taken = Survey.find(params[:survey_id])
   @questions = @survey_being_taken.questions
   @question_number = 1
-  erb :survey_take
+  erb :survey_take, layout: false
 end
 
 # submit survey
 get '/surveys/:survey_id/submit' do
-  p params
   params.each do |key, value|
-
+    if key.include?("question")
+      question_id = key.gsub("question", "").to_i
+      SurveyResult.create(choice: value, question_id: question_id, survey_id: params[:survey_id])
+    end
   end
-  "<p class='message'>thanks for taking the survey</p>"
+  erb :survey_take_success_message, layout: false
 end
 
 # see survey result
