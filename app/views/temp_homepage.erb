@@ -1,9 +1,17 @@
 <a href="/logout">Logout</a>
 <div class="container">
   <p>My surveys</p>
+
   <% @my_surveys.each do |survey| %>
     <a class="my-survey" href="/surveys/<%= survey.id %>/result"><%= survey.name %></a>
   <% end %>
+
+  <br><br>
+
+  <form action="/users/<%="#{current_user.id}"%>/create"  method="GET">
+    <input type="submit" id="create_survey" value="create survey">
+  </form>
+
   <p>Surveys created by other people</p>
   <% @other_surveys.each do |survey| %>
     <a class="other-survey" href="/surveys/<%= survey.id %>/take"><%= survey.name %></a>

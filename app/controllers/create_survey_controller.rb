@@ -9,11 +9,7 @@ get '/add_choice' do
 end
 
 get '/users/:id/create' do
-  if signed_in?
-    erb :create_survey
-  else
-    redirect '/'
-  end
+    erb :_create_survey
 end
 
 post '/users/:id/create' do
@@ -27,5 +23,5 @@ post '/users/:id/create' do
       question.choices << Choice.new(choice: value)
     end
   end
-  redirect '/'
+  redirect "/"
 end
