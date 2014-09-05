@@ -28,6 +28,7 @@ end
 post '/signup' do
   @user = User.create(params)
   session[:user_id] = @user.id
+  p signed_in?
   redirect '/'
 end
 
@@ -50,10 +51,15 @@ end
 
 # fill survey
 get '/surveys/:survey_id/take' do
-  @survey_being_taken = Survey.find(params[:survey_id])
-  @questions = @survey_being_taken.questions
-  @question_number = 1
-  erb :survey_take, layout: false
+  if Taken.where(user_id: current_user.id, survey_id: params[:survey_id]).length != 0
+    # erb :survey_take_success_message, layout: false
+    "<p>Fuck off</p>"
+  else
+    @survey_being_taken = Survey.find(params[:survey_id])
+    @questions = @survey_being_taken.questions
+    @question_number = 1
+    erb :survey_take, layout: false
+  end
 end
 
 # submit survey
@@ -64,12 +70,16 @@ get '/surveys/:survey_id/submit' do
       SurveyResult.create(choice: value, question_id: question_id, survey_id: params[:survey_id])
     end
   end
-  erb :survey_take_success_message, layout: false
+  Taken.create(user_id: current_user.id, survey_id: params[:survey_id])
 end
 
 # see survey result
 get '/surveys/:survey_id/result' do
-  @survey = Survey.find(params[:survey_id])
+  p params[:survey_id]
+  @survey_being_viewed = Survey.find(params[:survey_id])
+  p @survey_being_viewed
+  @questions = @survey_being_viewed.questions
+  @question_number = 1
   erb :survey_result, layout: false
 end
 
