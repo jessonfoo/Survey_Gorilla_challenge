@@ -47,10 +47,6 @@ get '/users/:id' do
   erb :temp_homepage
 end
 
-get '/users/:id/surveys/create' do
-
-end
-
 get '/surveys/:survey_id' do
   redirect "/surveys/#{params[:survey_id]}/result"
 end
@@ -63,8 +59,13 @@ get '/surveys/:survey_id/take' do
   erb :survey_take
 end
 
-post '/surveys/:survey_id/take' do
+# submit survey
+get '/surveys/:survey_id/submit' do
+  p params
+  params.each do |key, value|
 
+  end
+  "<p class='message'>thanks for taking the survey</p>"
 end
 
 # see survey result
@@ -73,3 +74,6 @@ get '/surveys/:survey_id/result' do
 
   erb :survey_result, layout: false
 end
+
+
+
