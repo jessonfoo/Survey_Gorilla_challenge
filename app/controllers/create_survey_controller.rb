@@ -1,7 +1,3 @@
-get '/users/:id/create' do
-  erb :create_survey
-end
-
 get '/add_question' do
   @question_id = params[:question_id]
   erb :_question, layout: false
@@ -12,11 +8,16 @@ get '/add_choice' do
   erb :_choice, layout: false
 end
 
+get '/users/:id/create' do
+  if signed_in?
+    erb :create_survey
+  else
+    redirect '/'
+  end
+end
+
 post '/users/:id/create' do
-  survey = Survey.create(name: params[:survey_name])
-
-  ##NEED TO ADD CREATED BY
-
+  survey = Survey.create(name: params[:survey_name], created_by: current_user.username)
   question = ""
   params.each do |key, value|
     if key.include?("question")
@@ -26,4 +27,5 @@ post '/users/:id/create' do
       question.choices << Choice.new(choice: value)
     end
   end
+  redirect '/'
 end

@@ -5,7 +5,7 @@ $(document).ready(function(){
     request.done(function(serverData) {
       console.log("success");
       console.log(serverData);
-      $(".servey-result").remove();
+      cleanup();
       $(".container").append(serverData);
     })
     request.fail(function() {
